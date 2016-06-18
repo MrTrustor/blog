@@ -1,0 +1,6 @@
+[submodule "learn"]
+	path = blog/themes/learn
+	url = https://github.com/matcornic/hugo-theme-learn.git
+[submodule "academic"]
+	path = blog/themes/academic
+	url = https://github.com/gcushen/hugo-academic.git
