@@ -23,3 +23,4 @@ upload:
 
 clean:
 	@docker rm hugo >/dev/null
+	@rm -r blog/public
