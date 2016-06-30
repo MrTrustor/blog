@@ -16,7 +16,7 @@ googleAnalytics = ""
   role = "Cloud Architect & DevOps engineer"
   organization = "Freelance & Oxalide"
   avatar = "moi.jpg"
-  email = "theo.ch@mley.fr"
+  email = "theo.ch+blog@mley.fr"
   #address = "Stanford AI Lab, Stanford University, California, 90210, USA."
   #phone = "888 888 88 88"
 
@@ -37,7 +37,7 @@ googleAnalytics = ""
   # Biography section.
   # Section will only be displayed if `content/home/about.md` exists.
   [params.about]
-    interests = ["Automation", "Software & infra architecture", "HA & Performance"]
+    interests = ["Automation", "Software & infra architecture", "Artificial Intelligence"]
     str_interests = "Interests"
     str_education = "Diplomas"
 
@@ -108,7 +108,7 @@ googleAnalytics = ""
   [[params.social]]
     icon = "envelope"
     icon_pack = "fa"
-    link = "mailto:theo.ch@mley.fr"
+    link = "mailto:theo.ch+blog@mley.fr"
 
   [[params.social]]
     icon = "twitter"
@@ -120,6 +120,11 @@ googleAnalytics = ""
     icon_pack = "fa"
     link = "//github.com/MrTrustor"
 
+  [[params.social]]
+    icon = "linkedin"
+    icon_pack = "fa"
+    link = "//www.linkedin.com/in/theo-chamley"
+
 
 # Navigation Links
 #   The weight parameter defines the order that the links will appear in.
@@ -130,21 +135,16 @@ googleAnalytics = ""
   weight = 1
 
 [[menu.main]]
-  name = "Publications"
-  url = "#publications"
-  weight = 2
-
-[[menu.main]]
   name = "Posts"
   url = "#posts"
-  weight = 3
+  weight = 2
 
 [[menu.main]]
   name = "Projects"
   url = "#projects"
-  weight = 4
+  weight = 3
 
 [[menu.main]]
   name = "Contact"
   url = "#contact"
-  weight = 5
+  weight = 4
