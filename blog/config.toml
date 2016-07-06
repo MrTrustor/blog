@@ -8,7 +8,7 @@ theme = "academic"
 # disqusShortname = "spf13"
 
 # Enable analytics by entering your Google Analytics tracking ID
-googleAnalytics = ""
+googleAnalytics = "UA-80301889-1"
 
 
 [params]
@@ -83,9 +83,9 @@ googleAnalytics = ""
 
   # Projects section.
   # Section will only be displayed if there are projects in `content/project/`.
-  [params.projects]
-    title = "Projects"
-    subtitle = ""
+  #[params.projects]
+  #  title = "Projects"
+  #  subtitle = ""
 
   # Contact section.
   [params.contact]
@@ -139,12 +139,12 @@ googleAnalytics = ""
   url = "#posts"
   weight = 2
 
-[[menu.main]]
-  name = "Projects"
-  url = "#projects"
-  weight = 3
+#[[menu.main]]
+#  name = "Projects"
+#  url = "#projects"
+#  weight = 3
 
 [[menu.main]]
   name = "Contact"
   url = "#contact"
-  weight = 4
+  weight = 3
