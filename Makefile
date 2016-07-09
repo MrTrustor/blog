@@ -27,3 +27,6 @@ upload-drafts:
 clean:
 	@docker rm hugo >/dev/null
 	@rm -r blog/public
+
+clean-drafts:
+	aws s3 rm --region eu-west-1 s3://blog-drafts.mrtrustor.net/ --recursive 
