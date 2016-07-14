@@ -8,7 +8,7 @@ tags = ["aws","network","security","architecture"]
 
 ## Classic network topology
 
-Typically, in a classical infrastructure, network architects design multiple networks according to the security wanted for the elements residing in the network. For instance, for a web infrastructure, you could have a front network where the webservers live which is accessible from the Internet on ports 80 and 443 and a back network where the database servers are which is only accessible from the front network. This is a fine design, because it allows you to manage security between the networks with firewalls and routing restrictions.
+Typically, in a classical infrastructure, network architects design multiple networks according to the security wanted for the elements residing in the network. For instance, for a web infrastructure, you could have a front network, where the webservers live, which is accessible from the Internet on ports 80 and 443 ; and a back network, for the database servers, which is only accessible from the front network. This is a fine design, because it allows you to manage security between the networks with firewalls and routing restrictions.
 
 If you have a complex application that deals with sensitive data, you can push it further with what I call an onion architecture (nothing to do with TOR): the networks are layered one on top of the other. The more sensitive the data, the deeper the network it resides in. Placing firewalls between each layer gives you fine-grain control on what has access to what. Even more interesting, if your application implements a good circuit-breaker pattern, your security guys can just flip a switch on the firewalls to protect all or part of the data.
 
@@ -31,7 +31,7 @@ However, the NACLs have a few restrictions:
 * 20 rules per NACL as a [soft limit](http://docs.aws.amazon.com/AmazonVPC/latest/UserGuide/VPC_Appendix_Limits.html#vpc-limits-nacls), 40 as hard limit but with a potential performance impact.
 * NACLs are **stateless**! This means that they don't follow TCP or UDP connections and that if your machine makes an outbound connection to port 80, you have to explicitly allow the response on a port that will be, most of the time, random.
 
-Statelessness was a huge pain in classic firewalls, and it still is on AWS. This is why I recommend to not use NACLs if it can be avoided or only to blacklist a few sensitive ports.
+Statelessness was a huge pain in classic firewalls, and it still is on AWS. This is why I recommend not to use NACLs if it can be avoided or only to blacklist a few sensitive ports.
 
 ### Security groups
 
@@ -68,7 +68,7 @@ With this simple set up you have a fully working and completely secure topology,
 
 ## <a name="section3"></a>AWS networking architecture
 
-In a classical network architecture, one could also manage filtering machine by machine, with IPTables rules on each machine, but almost nobody does that because it's very complicated to manage and not that easy to set up (not speaking about the risk of locking yourself out of the servers). Security groups give you an easy way to manage security at the instance level. The consequence is that **you don't really need to set up filtering on the network border** anymore.
+In a classical network architecture, one could also manage filtering machine by machine, with IPTables rules on each machine, but almost nobody does that because it's very complicated to manage and not that easy to set up (not talking about the risk of locking yourself out of the servers). Security groups give you an easy way to manage security at the instance level. The consequence is that **you don't really need to set up filtering on the network border** anymore.
 
 And if you don't need firewalls between networks, you can merge almost all networks. In the end, you only need 2 or 3 categories of networks:
 
