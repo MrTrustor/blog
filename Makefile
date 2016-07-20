@@ -6,13 +6,13 @@ all-drafts: build-drafts upload-drafts
 
 build:
 	@cd blog && \
-         docker run --name hugo --user $(shell id -u) \
+         docker run --name hugo --rm --user $(shell id -u) \
                     -v $(shell pwd)/blog:/var/tmp/site -p 1313:1313 \
                     mrtrustor/hugo:$(HUGO_VER)
 
 build-drafts:
 	@cd blog && \
-         docker run --name hugo --user $(shell id -u) \
+         docker run --name hugo --rm --user $(shell id -u) \
                     -v $(shell pwd)/blog:/var/tmp/site -p 1313:1313 \
                     mrtrustor/hugo:$(HUGO_VER) --buildDrafts --baseURL="http://blog-drafts.mrtrustor.net"
 
@@ -25,7 +25,7 @@ upload-drafts:
 	$(MAKE) clean
 
 clean:
-	@docker rm hugo >/dev/null
+	@docker rm hugo >/dev/null || exit 0
 	@rm -r blog/public
 
 clean-drafts:
