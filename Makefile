@@ -25,7 +25,6 @@ upload-drafts:
 	$(MAKE) clean
 
 clean:
-	@docker rm hugo >/dev/null || exit 0
 	@rm -r blog/public
 
 clean-drafts:
