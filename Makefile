@@ -17,11 +17,11 @@ build-drafts:
                     mrtrustor/hugo:$(HUGO_VER) --buildDrafts --baseURL="http://blog-drafts.mrtrustor.net"
 
 upload:
-	aws s3 sync --delete --region eu-west-1 blog/public/ s3://blog.mrtrustor.net/
+	s3deploy -bucket blog.mrtrustor.net -region eu-west-1 -source blog/public/
 	$(MAKE) clean
 
 upload-drafts:
-	aws s3 sync --delete --region eu-west-1 blog/public/ s3://blog-drafts.mrtrustor.net/
+	s3deploy -bucket blog-drafts.mrtrustor.net -region eu-west-1 -source blog/public/
 	$(MAKE) clean
 
 clean:
