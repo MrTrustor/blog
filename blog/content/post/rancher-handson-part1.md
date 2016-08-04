@@ -13,8 +13,12 @@ Here is the first part of the presentation:
 * general presentation of Rancher,
 * a first demonstration: creating and scaling an Elasticsearch cluster in Rancher.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/hqZJ-_joTvI?cc_load_policy=1" frameborder="0" allowfullscreen></iframe>
+
 French subtitles are available on the video.
+Useful links:
+
+* Source code: https://github.com/MrTrustor/rancher-vagrant
+* Instructions: https://github.com/MrTrustor/rancher-vagrant/blob/master/HANDSON.md
 
 In the second part to come, you will learn how to create your own custom catalog in Rancher (one of its nicest features) and how to manage a Kubernetes cluster _via_ Rancher.
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jKCqrkEZBT0" frameborder="0" allowfullscreen align="middle"></iframe>
