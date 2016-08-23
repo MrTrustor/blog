@@ -1,13 +1,14 @@
 +++
 date = "2016-08-23"
-draft = true
+draft = false
 title = "Rancher Hands-On - part 2"
 image = "rancher-handson-part2/header.jpg"
 tags = ["docker","rancher","meetup","kubernetes"]
 +++
 
-Here is the second part of the presentation I gave at the 42<sup>nd</sup> Docker Paris Meetup about Rancher. For the first video, [click here](/post/rancher-handson-part1/).
-Three subjects are treated here:
+Here is the second part of the presentation I gave at the 42<sup>nd</sup> Docker Paris Meetup about Rancher. To see the first video, [click here](/post/rancher-handson-part1/).
+
+The second part is devoted to three topics:
 
 * Demonstration of the Rancher catalog,
 * Creating a custom catalog, updating an item,

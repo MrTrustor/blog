@@ -22,3 +22,5 @@ Useful links:
 * Instructions: https://github.com/MrTrustor/rancher-vagrant/blob/master/HANDSON.md
 
 In the second part to come, you will learn how to create your own custom catalog (one of its nicest features) in Rancher and how to manage a Kubernetes cluster _via_ Rancher.
+
+EDIT: The second part is available [here](/post/rancher-handson-part2/).
