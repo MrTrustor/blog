@@ -29,3 +29,10 @@ clean:
 
 clean-drafts:
 	aws s3 rm --region eu-west-1 s3://blog-drafts.mrtrustor.net/ --recursive 
+
+post:
+	@cd blog && \
+	docker run --name hugo --rm --user $(shell id -u) \
+		-v $(shell pwd)/blog:/var/tmp/site -p 1313:1313 \
+		mrtrustor/hugo:$(HUGO_VER) \
+		new post/$(POST_NAME).md
