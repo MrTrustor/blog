@@ -1,4 +1,4 @@
-HUGO_VER = 0.15
+HUGO_VER = 0.16
 
 all: build upload
 
