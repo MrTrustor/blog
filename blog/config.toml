@@ -104,6 +104,11 @@ xiq0GYIOGiR+
     str_education = "Diplomas"
 
     [[params.about.education]]
+      course = "Machine Learning"
+      institution = "Standford - Coursera MOOC, TDEMGCBZU5U8"
+      year = 2016
+
+    [[params.about.education]]
       course = "Solutions Architect – Professional"
       institution = "Amazon Web Services, AWS-PSA-1551"
       year = 2015
