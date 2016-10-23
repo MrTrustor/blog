@@ -1,6 +1,6 @@
 +++
-date = "2016-10-21"
-draft = true
+date = "2016-10-23"
+draft = false
 title = "Kubernetes on AWS - Kops"
 image = "k8s-aws-kops/aws-network-banner.png"
 tags = ["aws","k8s","kubernetes", "high-avaibility", "kops"]
@@ -8,9 +8,12 @@ tags = ["aws","k8s","kubernetes", "high-avaibility", "kops"]
 
 ## Introduction
 
-In this post, I will show you, from scratch, how to create a production-ready [Kubernetes](https://kubernetes.io) cluster on AWS. In a future post, I will explain how to run a fairly complicated application -Gitlab- with complete high availability on this cluster.
+[Kubernetes](https://kubernetes.io) is the leading container orchestration solution. It promises to standardize the way you run applications, without worrying if you are running on bare-metal, on a public cloud provider or on a private cloud.
 
-This post assumes some knowledge of both AWS and Kubernetes. You should familiar with the following elements.
+AWS being the leading public cloud solution, it is important to be able to run Kubernetes easily on this provider.
+In this post, I will show you how to create a production-ready Kubernetes cluster on AWS from scratch. In a future post, I will explain how to run a fairly complex application -Gitlab- with complete high availability on this cluster.
+
+This post assumes some knowledge of both AWS and Kubernetes. You should be familiar with the following elements.
 
 In AWS:
 
@@ -21,12 +24,13 @@ In AWS:
 
 For Kubernetes:
 
+* What Kubernetes is (*obviously*),
 * ``kubectl``,
 * The basic architecture of Kubernetes.
 
 ## Kops
 
-So far, running Kubernetes (K8s) on AWS has always been challenging and quite long if you wanted a production cluster. The ``kube-up.sh`` script, while quickly creating a cluster, was nowhere near sufficient for production: no auto-scaling group, no VPC management, etc.
+So far, running Kubernetes (K8s) on AWS has always been challenging and quite long if you wanted a production cluster. The ``kube-up.sh`` script, while quickly creating a cluster, is nowhere near sufficient for production: no auto-scaling group, no VPC management, etc.
 
 This is changing, mainly thanks to [Kops](https://github.com/kubernetes/kops). Kops is a tool under active development by the K8s AWS special interest group. Written in Go, its goal is to manage K8s clusters. You can now provision and customize far better installations:
 
@@ -60,7 +64,7 @@ kops create cluster --cloud=aws \
   --name=k8s.myzone.net
 ```
 
-At this stage, the cluster is not yet created, only its description. You can still change every option by editing your cluster:
+At this stage, only the cluster's description is created, not the cluster itself. You can still change any option by editing your cluster:
 
 ```bash
 kops edit cluster k8s.myzone.net
@@ -76,16 +80,19 @@ After a few minutes, your ``kubectl`` should be able to connect to the newly cre
 
 ```bash
 kubectl get nodes
-# TODO
+NAME                                           STATUS    AGE
+ip-10-0-0-159.eu-west-1.compute.internal       Ready     1d
+ip-10-0-0-213.eu-west-1.compute.internal       Ready     1d
+ip-10-0-1-105.eu-west-1.compute.internal       Ready     1d
+ip-10-0-1-208.eu-west-1.compute.internal       Ready     1d
 ```
 
 ## Upgrading a cluster
 
-Kops also allows to easily upgrade a running Kubernetes cluster with no downtime, provided you have a multi-master setup. Just edit the cluster and change the version:
+Kops also allows to easily upgrade a running Kubernetes cluster with no downtime, provided you have a multi-master setup. Just edit the cluster and change the ``kubernetesVersion``:
 
 ```bash
 kops edit cluster k8s.myzone.net
-# TODO
 ```
 
 When you apply the update, Kops will automatically do a rolling-upgrade of the cluster:
@@ -96,6 +103,6 @@ kops update cluster k8s.myzone.net --yes
 
 ## Conclusion
 
-Kops allows to create and manage easily Kubernetes clusters on AWS, with real production in mind. This solution is far easier and better than anything I have seen to provision K8s on AWS. It also allows a wide range of customizations.
+Kops allows to create and easily manage Kubernetes clusters on AWS, with real production in mind. This solution is far easier and better than anything I have seen to provision K8s on AWS. It also allows a wide range of customizations.
 
 In the next post, I will show how to leverage AWS managed services in conjunction with Kubernetes to run applications (with their databases and data) in a truly highly available fashion.
