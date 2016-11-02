@@ -99,6 +99,7 @@ When you apply the update, Kops will automatically do a rolling-upgrade of the c
 
 ```bash
 kops update cluster k8s.myzone.net --yes
+kops rolling-update cluster k8s.myzone.net --yes
 ```
 
 ## Conclusion
