@@ -1,6 +1,6 @@
 +++
 date = "2016-11-04"
-draft = true
+draft = false
 title = "Gitlab on Kubernetes + AWS"
 image = "gitlab-on-k8s/gitlab-kubernetes.png"
 tags = ["aws","k8s","kubernetes", "high-avaibility", "gitlab"]
@@ -10,12 +10,12 @@ tags = ["aws","k8s","kubernetes", "high-avaibility", "gitlab"]
 
 In the last [post](/post/k8s-aws-kops/) we saw how to create a production-ready
 [Kubernetes](http://kubernetes.io/) (K8s) cluster on AWS with
-[Kops](https://github.com/kubernetes/kops). Now, let's see how to it, in
+[Kops](https://github.com/kubernetes/kops). Now, let's see how to use it in
 conjunction with AWS managed services to host a highly available application:
 [Gitlab](/post/gitlab-grand-master-plan/).
 
-Having some knowledge of Terraform, AWS and Kubernetes will help you in the
-reading of this post.
+Having some knowledge of Terraform, AWS and Kubernetes will help you in reading
+of this post.
 
 All the code used in this post is available on
 [Github](https://github.com/MrTrustor/gitlab-kubernetes-aws).
@@ -29,11 +29,11 @@ Gitlab is an open-source competitor of Github. It is composed of several parts:
 * A Redis server for cache and sessions,
 * A "core" app with Unicorn, SSH and Sidekiq servers (all those are bundled in
   the [Docker image](https://hub.docker.com/r/sameersbn/gitlab/) by
-  [Sameer Naik](https://github.com/sameersbn) - Thanks to him!).
+  [Sameer Naik](https://github.com/sameersbn) - Thank you!).
 
 ### Problem
 
-The main problem in creating HA apps on K8s/AWS is the storage either in the
+The main problem in creating HA apps on K8s/AWS is storage, either in the
 form of a database or of a filesystem. The EBS disks that you can attach to
 EC2 instances would be the goto solution as Kubernetes can manage those. But
 EBS disks live in an availability zone and therefore are not highly available.
@@ -59,7 +59,7 @@ Here is what it looks like:
 
 As you can see on this schema, we will actually have at least one Gitlab
 instance per AZ. In each AZ, Gitlab needs to access the EFS storage, but the
-mount point changes from one AZ to the other, so to provide HA, we need at least
+mount point changes from one AZ to the other. So, to provide HA, we need at least
 2 Gitlab instances using 2 of the EFS mount points.
 
 ## Implementation
@@ -270,7 +270,6 @@ For each piece of yaml code in this post, you can create the resources they
 describe by puting the code in a ``file.yaml`` file and running ``kubectl apply
 -f file.yaml``.
 
-
 #### Persistent Volumes
 Let's start with the ``PersistentVolume`` objects. As we have 3 EFS endpoints,
 we need 3 ``PersistentVolumes``, even if it is to access the same data. Note
@@ -375,7 +374,7 @@ The ``Deployment`` will ensure that we always have a Redis server (``replicas:
 
 As said previously, we need at least 2 Gitlab instances, spread over 2 AZs. So
 we will create one Gitlab Deployment per AZ. Here is the code for AZ ``a``, for
-AZs b and c, just copy and paste + change ``a`` by ``b`` or ``c`` where needed.
+AZs ``b`` and ``c,`` just copy and paste + change ``a`` by ``b`` or ``c`` where needed.
 
 Two important things to note:
 
@@ -568,11 +567,10 @@ Gitlab accessible from the outside world!
 Well, that was a lot! But you now have a highly available Gitlab, that you can
 scale easily if needed! Only a few things are missing to have a state of the art
 Gitlab installation: HTTPS and Gitlab runners for GitlabCI (maybe more on that
-in a future post!).
+in a future post).
 
 The main thing to remember is that it is possible to host stateful applications
 on Kubernetes, provided you have a HA storage backend. In this case, we use both
 AWS RDS and EFS and we have to work around some EFS properties, but this method
-could be applied to a whole range of applications. I hope you will be able to
-understand the underlying principles of this setup so that you can apply them to
-your own use-case.
+could be applied to a whole range of applications. Understanding the underlying
+principles of this setup will allow you to apply them to your own use-case.
