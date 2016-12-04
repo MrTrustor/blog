@@ -14,7 +14,7 @@ build-drafts:
 	@cd blog && \
          docker run --name hugo --rm --user $(shell id -u) \
                     -v $(shell pwd)/blog:/var/tmp/site -p 1313:1313 \
-                    mrtrustor/hugo:$(HUGO_VER) --buildDrafts --baseURL="http://blog-drafts.mrtrustor.net"
+		    mrtrustor/hugo:$(HUGO_VER) --buildDrafts --baseURL="https://blog-drafts.mrtrustor.net"
 
 upload:
 	s3deploy -bucket blog.mrtrustor.net -region eu-west-1 -source blog/public/
