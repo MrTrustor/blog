@@ -1,4 +1,4 @@
-baseurl = "http://blog.mrtrustor.net/"
+baseurl = "https://blog.mrtrustor.net/"
 title = "MrTrustor's shiny blog"
 copyright = "&copy; 2016 Théo Chamley"
 languageCode = "en-us"
