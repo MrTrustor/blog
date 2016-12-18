@@ -1,12 +1,12 @@
 +++
 date = "2016-12-17"
-draft = true
+draft = false
 title = "AWS re:Invent 2016 - A recap (part I)"
 image = "aws-reinvent-2016-a-recap-part1/header.png"
 tags = ["aws","reinvent"]
 +++
 
-Two weeks ago, thanks to my company, [Oxalide](http://www.oxalide.com), I had the chance to attend AWS re:Invent, at Las Vegas. This is the first part of a recap of all the [announcements](https://aws.amazon.com/new/reinvent/?nc1=h_ls) (yes, there are so many things to talk about that it doesn't fit in a single post). You will also find a small opinionated analysis of the impact of each product, based on the current market and ecosystem.
+Two weeks ago, thanks to my company, [Oxalide](http://www.oxalide.com), I had the chance to attend AWS re:Invent, in Las Vegas. This is the first part of a recap of all the [announcements](https://aws.amazon.com/new/reinvent/?nc1=h_ls) (yes, there are so many things to talk about that it doesn't fit in a single post). You will also find a small opinionated analysis of the impact of each product, based on the current market and ecosystem.
 
 ![announcements](/img/aws-reinvent-2016-a-recap-part1/announcements.jpg)
 
@@ -18,13 +18,13 @@ I tagged the really important ones with a ``[Game Changer]`` in the title.
 
 ## Compute
 
-AWS is still clearly the leader on this field and keeps innovating with more and more diverse products for all use cases.
+AWS clearly remains the leader in this field and keeps innovating with more and more diverse products for all use cases.
 
 ### Elastic GPUs for EC2 [Preview Only]
 
 This features allows to add a GPU to an EC2 instance the same way you add an EBS volume. You have 4 GPUs available: from eg1.medium (1GiB of RAM) to eg1.2xlarge (8GiB of RAM). However, right now the only library that will detect and use to GPUs is a custom **Windows** OpenGL library. Support for the Amazon Linux AMI has been announced.
 
-**Analysis** - While this is a nice feature that no other Cloud provider offers, the use cases are  very narrow:
+While this is a nice feature that no other Cloud provider offers, the use cases are  very narrow:
 
 * Windows only
 * Workload that you don't want or can't run on a G2 or P2 instance.
@@ -37,7 +37,7 @@ References:
 
 The EC2 F1 instances have field programmable gate arrays (FGPAs) that can be used to create custom hardware accelerations. This comes with the possibility to sell your F1 instances and their already customized FGPAs on the AWS Marketplace.
 
-**Analysis** - Once again, no other cloud provider offers an equivalent product. The fact that you can sell your own work on FGPAs on the AWS Marketplace demonstrates once again the capacity of AWS to create new industries from scratch: I am sure that in the coming months, at least a few companies will be created solely for that.
+Once again, no other cloud provider offers an equivalent product. The fact that you can sell your own work on FGPAs on the AWS Marketplace demonstrates once again the capacity of AWS to create new industries from scratch: I am sure that in the coming months at least a few companies will be created solely for that.
 
 References:
 
@@ -47,7 +47,7 @@ References:
 
 This is AWS new "beginner" product. Lightsail is a simple Virtual Private Server (VPS) offer that can come with applications such as Wordpress or Gitlab preinstalled. The price starts at $5 a month for the equivalent of a t2.nano (512MB RAM - 1 vCPU).
 
-**Analysis** - An interesting move, designed to facilitate the entry into the complex AWS world. It makes me think of chocolate cigarettes for kids. While $5/month seems cheap, the server is ridiculously small. For instance, to host Gitlab in correct conditions, you would need the $40 or $80 options. There are far cheaper solutions for VPSs out there.
+An interesting move, designed to facilitate the entry into the complex AWS world. It makes me think of chocolate cigarettes for kids. While $5/month seems cheap, the server is ridiculously small. For instance, to host Gitlab in correct conditions, you would need the $40 or $80 options. There are far cheaper solutions for VPSs out there.
 
 References:
 
@@ -58,7 +58,7 @@ References:
 
 Greengrass is a service that allows you to run Python Lambda Functions locally. It is intended to be used on IoT devices that have limited connectivity and bandwidth to allow them to (pre)process the data they generate locally. It is already present in the new AWS Snowball Edge.
 
-**Analysis** - AWS is pushing hard on both IoT and Serverless. Greengrass is the symbiosis of the two and feels quite natural as a product. I am sure it will find its market.
+AWS is pushing hard on both IoT and Serverless. Greengrass is the symbiosis of the two and feels quite natural as a product. I am sure it will find its market.
 
 ---
 
@@ -70,7 +70,7 @@ This is a very interesting one. Athena allows you to run SQL queries directly on
 
 You point Athena to a S3 bucket, you indicate how the data is structured, and _voilà_!
 
-**Analysis** - On conditions of good performances (which I have not yet tested), this has the potential of changing the whole BigData analysis field because of the simplicity: put your data in S3 (don't worry about setup, scale, redundancy or anything) and that's it, you have your datalake ready for analysis.
+On conditions of good performances (which I have not yet tested), this has the potential of changing the whole BigData analysis field because of the simplicity: put your data in S3 (don't worry about setup, scale, redundancy or anything) and that's it, you have your datalake ready for analysis.
 
 References:
 
@@ -167,13 +167,13 @@ Here is the description of Rekognition:
 }
 ```
 
-If the firsts elements are ok, "Beach", "Coast", "Sea" and "Water" are way off, given that this picture was taken in the Death Valley. Also, "Dimples"?! Thank you very much Rekognition :-)!
+If the first elements are ok, "Beach", "Coast", "Sea" and "Water" are way off, given that this picture was taken in the Death Valley.
 
 Here is the result of Google Cloud Vision API as a comparison:
 
 ![vision_api](/img/aws-reinvent-2016-a-recap-part1/vision_api.jpg)
 
-**Analysis** - AWS is here trying to close the gap with GCP on Artificial Intelligence. Rekognition is not as good as Vision API right now (most notably concerning face analysis), but let's see how the service improves with time.
+AWS is here trying to close the gap with GCP on Artificial Intelligence. Rekognition is not as good as Vision API right now (most notably concerning face analysis), but let's see how the service improves with time.
 
 References:
 
@@ -185,7 +185,7 @@ Polly is a text-to-speech (TTS) service. The produced speech is quite life-like,
 
 The service is available in 24 languages. If the English seemed pretty good to me, the French speech was clearly not as life-like.
 
-**Analysis** - To my knowledge, Google does not have a public TTS API (but you can "hack" Google Translate for that), but it does have a speech to text API, Speech API, that works very well. So, here, the 2 companies are not in direct competition, even if it probably will come.
+To my knowledge, Google does not have a public TTS API (but you can "hack" Google Translate for that), but it does have a speech to text API, Speech API, that works very well. Here, the 2 companies are not in direct competition, even if it will probably come.
 
 References:
 
@@ -199,7 +199,7 @@ Lex is the core of Alexa, Amazon's virtual assistant. This service allows you to
 * You declare what information you need to complete the actions,
 * You specify the lambda function to be launched to execute the action once the bot has all the information needed.
 
-**Analysis** - This is certainly interesting, event if I am not a hundred percent confident that conversational interfaces are the future as long as [general AI](https://en.wikipedia.org/wiki/Artificial_general_intelligence) does not exist. As far as I am aware, Lex is the first product of its kind.
+This is certainly interesting, even if I am not a hundred percent confident that conversational interfaces are the future as long as [general AI](https://en.wikipedia.org/wiki/Artificial_general_intelligence) does not exist. As far as I am aware, Lex is the first product of its kind.
 
 References:
 
@@ -223,9 +223,9 @@ The new Snowball Edge has more capacity (100TB), but the other features are more
 
 The example given by Andy Jassy during the keynote was the one of a scientific boat: store all the retrieved data on Snowball Edge, do a first analysis with Greengrass to have preliminary results, and once the boat goes back to mainland, send the Snowball back to do the full analysis.
 
-**Analysis** - Snowball definitely has its uses. While you can send data on a physical drive to both Microsoft or Google, neither has a service equivalent to Snowball.
+Snowball definitely has its uses. While you can send data on a physical drive to both Microsoft or Google, neither has a service equivalent to Snowball.
 
-When AWS announced Greengrass on Snowball Edge, I must admit I failed to see the use case, but the example given shows that it can be useful in particular situations.
+When AWS announced Greengrass on Snowball Edge, I must admit I failed to see the use case, but the given example shows that it can be useful in particular situations.
 
 References:
 
@@ -249,4 +249,4 @@ References:
 
 Until now, Aurora was a very good MySQL solution. It also now is a very good PostgreSQL solution. The advantages of Aurora are quite complex to explain and out of the scope of this post, but suffice to say that it performs and scales better than a classic MySQL or PostgreSQL.
 
-**Analysis** - There is some bad blood between Oracle and AWS (the trolling during reInvent was quite intense). Aurora PostgreSQL was a highly requested feature and AWS has delivered. But it is also openly a move against Oracle. But I am happy, Aurora and PostgreSQL are both good products: the combination of the two will be great I hope!
+There is some bad blood between Oracle and AWS (the trolling during re:Invent was quite intense). Aurora PostgreSQL was a highly requested feature and AWS has delivered in an open move against Oracle. Still, Aurora and PostgreSQL are both good products: the combination of the two will hopefully be great!
