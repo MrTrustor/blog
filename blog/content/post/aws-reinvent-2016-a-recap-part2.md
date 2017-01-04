@@ -1,13 +1,14 @@
 +++
 date = "2017-01-02"
-draft = true
+draft = false
 title = "AWS re:Invent 2016 - A recap (part II)"
 image = "aws-reinvent-2016-a-recap-part1/header.png"
 tags = ["aws","reinvent"]
 +++
 
 This is the second and last part of my AWS re:Invent recap. Go check out the
-[first part](/post/aws-reinvent-2016-a-recap-part1/) if you haven't already.
+[first part](/post/aws-reinvent-2016-a-recap-part1/) if you haven't done so
+already.
 
 ![announcements](/img/aws-reinvent-2016-a-recap-part1/announcements.jpg)
 
@@ -23,7 +24,7 @@ I tagged the really important ones with a ``[Game Changer]`` in the title.
 ## Compute
 
 This year, AWS really pushed its advantage in the serverless market where they
-are even more clearly the leader than in other fields.
+are leading even more clearly than in other fields.
 
 ### C# in AWS Lambda
 
@@ -58,7 +59,7 @@ Step Functions clearly was the product that AWS was pushing the most, because it
 takes the serverless paradigm a step further.
 
 AWS Step Functions allows to connect Lambda functions with each other to
-implement a real, complex, application. You can implement classic paradigms such
+implement a real, complex application. You can implement classic paradigms such
 as loops, retries, etc. You can also poll for long-running jobs.
 
 ![step_functions](/img/aws-reinvent-2016-a-recap-part2/stepfunctions.png)
@@ -75,7 +76,7 @@ References:
 ### Blox
 
 If AWS is the leader in the serverless world, it clearly missed the container
-battle. ECS is light-years behind other solutions such as Kubernetes or
+battle. ECS is light years behind other solutions such as Kubernetes or
 Mesos/Marathon. So much so that, before re:Invent, there was chatter about a
 possible Kubernetes-as-a-Service (or at least etcd-as-a-Service),
 announcement that would come in direct competition with Google's GKE.
@@ -100,7 +101,7 @@ nodes and allocate workloads according to those labels.
 
 While Blox is in theory a good idea, it is probably too complicated for most
 people to implement those kind of tools. Right now, it only has a really small
-subsets of the features that the competitors have and I don't see this project
+subset of the features that the competitors have and I don't see this project
 gaining enough traction to ever catch up. It feels like AWS is throwing all of
 its power in the serverless battle while doing the bare minimum on the container
 front.
@@ -110,7 +111,7 @@ known for having a very ambivalent attitude towards open-source: on one side,
 they clearly use it a lot and cater to the open-source community, but on the
 other side, they almost never release their own tools and it is notoriously
 difficult for Amazon employees to contribute to open-source projects. It would
-be nice if Blox was the beginning of a change of Amazon's policy, but I honestly
+be nice if Blox was the beginning of Amazon's policy change, but I honestly
 doubt it.
 
 References:
@@ -141,8 +142,8 @@ It is my supposition that AWS already had an anti-DDoS service but never
 advertised it. Naming it publicly "Shield Standard" allowed them to
 commercialize the "Advanced" version.
 
-The cost of the Advanced tier is quite high, so you the potential customers are
-probably already large AWS customers or companies with large budgets and
+The cost of the Advanced tier is quite high, so the potential users are
+probably already big AWS customers (or companies with large budgets) and
 websites that "naturally" attract those kinds of attacks.
 
 References:
@@ -165,7 +166,7 @@ to the Chef-Server to get their configuration and the needed cookbooks.
 You can use Chef outside AWS, but OpsWorks allows to integrate with other AWS
 services such as autoscaling.
 
-I am a big Chef user, so AWS OFCA is very interesting for me, but I did not have
+I am a big Chef user, so AWS OFCA is of great interest to me, but I haven't had
 the time to test this product yet. If you are already using Chef, it probably is
 a good solution. If you are not, you probably want to compare Chef to other
 projects such as Puppet, Ansible, Salt-Stack (or even Docker) before making a
@@ -183,29 +184,28 @@ that allows you to manage your EC2 and on-premise fleet.
 * **Run Command**: runs a command on all or a subset of your nodes.
 * **Sate Manager**: maintains a defined system configuration via policies that
 are applied at regular intervals.
-* **Parameter Store**: centralized storage for parameters (licenses, passwords,
+* **Parameter Store**: centralizes storage for parameters (licenses, passwords,
   user lists, etc.).
-* **Maintenance Window**: Specify a time window for installation of updates and
-other system maintenance.
-* **Software Inventory**: Gathers a detailed software and configuration
+* **Maintenance Window**: allows you to specify a time window for installation
+of updates and other system maintenance.
+* **Software Inventory**: gathers a detailed software and configuration
 inventory (with user-defined additions) from each instance.
 * **AWS Config Integration**: based on Software Inventory, AWS Config can now
 record software inventory changes.
 * **Patch Management**: automates the patching process for your instances.
-* **Automation**: Simplify AMI building and other recurring AMI-related tasks.
+* **Automation**: simplifies AMI building and other recurring AMI-related tasks.
 
 I am ambivalent towards this product: on one side it provides some features that
-were clearly lacking from the AWS ecosystem, but on the other side most, if not
-all of them, have already been successfully implemented by other open-source
-tools.
+the AWS ecosystem clearly lacked, but on the other side most, if not all of
+them, have already been successfully implemented by other open-source tools.
 
-Most of them are also targeted at non-immutable infrastructures (i.e
-long-running instances whose configuration can change during their lifetime)
-whereas the best practice is clearly represented by immutable infrastructures
-where instances are short-lived and never modified once launched.
+Most of them also target non-immutable infrastructures (i.e long-running
+instances whose configuration can change during their lifetime) whereas the best
+practice is clearly represented by immutable infrastructures where instances are
+short-lived and never modified once launched.
 
 I feel like migrating from other tools such as Packer or Ansible to those
-requires a lot of work and I am not sure that it's worth it.
+requires a lot of work and I am not sure if it's worth it.
 
 References:
 
@@ -213,7 +213,7 @@ References:
 
 ### AWS Personal Health Dashboard
 
-In this dashboard, you can see all the AWS events that are related to the
+On this dashboard, you can see all the AWS events that are related to the
 services you are using. If there is a maintenance planned on a host one of your
 nodes is running on, you will see it here. If there was a problem on your RDS
 instance, it will be displayed with some contextual help. You can also automate
@@ -229,11 +229,11 @@ References:
 
 AWS was missing a few pieces in this field. The introduction of those 2 new
 products is filling those gaps and clearly indicates that AWS wants to have
-a product available for everyone of your needs.
+a product available for your every need.
 
 ### AWS CodeBuild
 
-AWS CodeBuild comes in the already crowded market of the CI tools. As such, it
+AWS CodeBuild comes to the already crowded market of the CI tools. As such, it
 is a direct competitor of Jenkins, Travis CI or Gitlab CI. It allows you to run
 a continuous integration/deployment (CI/CD) pipeline in a managed environment.
 
@@ -331,12 +331,12 @@ References:
 ### AWS Glue [Coming soon]
 
 Glue is a managed ETL (Extract, Transform, Load) tool. You define data sources
-and targets (S3, RDS, Redshift or others), define transformations to be applied
+and targets (S3, RDS, Redshift or others), specify transformations to be applied
 to this data (Glue will generate some working Python code that you can modify)
-to the data and finally you define and schedule jobs.
+and finally you create and schedule jobs.
 
-Glue has the potential to be a very interesting service, but we are lacking
-details at the moment to give a more definitive opinion.
+Glue has the potential to be a very interesting service, but there are not
+enough details at the moment to give a more definitive opinion.
 
 References:
 
