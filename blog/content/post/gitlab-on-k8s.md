@@ -474,64 +474,64 @@ spec:
             secretKeyRef:
               name: gitlab-secrets
               key: otp-key-base
-              - name: GITLAB_ROOT_PASSWORD
-                valueFrom:
-                  secretKeyRef:
-                    name: gitlab-secrets
-                    key: root-pass
-              - name: GITLAB_HOST
-                value: git.default.cluster.local
-              - name: GITLAB_PORT
-                value: "80"
-              - name: GITLAB_SSH_PORT
-                value: "22"
-              - name: GITLAB_NOTIFY_ON_BROKEN_BUILDS
-                value: "true"
-              - name: GITLAB_NOTIFY_PUSHER
-                value: "false"
-              - name: DB_TYPE
-                value: postgres
-              - name: DB_HOST
-                # Value given by Terraform
-                value: gitlab-pgsql.xxxxxx.eu-west-1.rds.amazonaws.com
-              - name: DB_PORT
-                value: "5432"
-              - name: DB_USER
-                value: gitlab
-              - name: DB_PASS
-                valueFrom:
-                  secretKeyRef:
-                    name: gitlab-secrets
-                    key: db-pass
-              - name: DB_NAME
-                value: gitlab_production
-              - name: REDIS_HOST
-                value: redis
-              - name: REDIS_PORT
-                value: "6379"
-              ports:
-              - name: http
-                containerPort: 80
-              - name: ssh
-                containerPort: 22
-              volumeMounts:
-              - mountPath: /home/git/data
-              livenessProbe:
-                httpGet:
-                  path: /
-                  port: 80
-                initialDelaySeconds: 180
-                timeoutSeconds: 5
-              readinessProbe:
-                httpGet:
-                  path: /
-                  port: 80
-                initialDelaySeconds: 5
-                timeoutSeconds: 1
-            volumes:
-            - name: data
-              persistentVolumeClaim:
-                claimName: gitlab.data.efs.a
+        - name: GITLAB_ROOT_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-secrets
+              key: root-pass
+        - name: GITLAB_HOST
+          value: git.default.cluster.local
+        - name: GITLAB_PORT
+          value: "80"
+        - name: GITLAB_SSH_PORT
+          value: "22"
+        - name: GITLAB_NOTIFY_ON_BROKEN_BUILDS
+          value: "true"
+        - name: GITLAB_NOTIFY_PUSHER
+          value: "false"
+        - name: DB_TYPE
+          value: postgres
+        - name: DB_HOST
+          # Value given by Terraform
+          value: gitlab-pgsql.xxxxxx.eu-west-1.rds.amazonaws.com
+        - name: DB_PORT
+          value: "5432"
+        - name: DB_USER
+          value: gitlab
+        - name: DB_PASS
+          valueFrom:
+            secretKeyRef:
+              name: gitlab-secrets
+              key: db-pass
+        - name: DB_NAME
+          value: gitlab_production
+        - name: REDIS_HOST
+          value: redis
+        - name: REDIS_PORT
+          value: "6379"
+        ports:
+        - name: http
+          containerPort: 80
+        - name: ssh
+          containerPort: 22
+        volumeMounts:
+        - mountPath: /home/git/data
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 180
+          timeoutSeconds: 5
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 5
+          timeoutSeconds: 1
+        volumes:
+          - name: data
+            persistentVolumeClaim:
+              claimName: gitlab.data.efs.a
 ```
 
 #### Gitlab Service
