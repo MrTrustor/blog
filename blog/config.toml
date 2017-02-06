@@ -104,6 +104,11 @@ xiq0GYIOGiR+
     str_education = "Diplomas"
 
     [[params.about.education]]
+      course = "LFS258 - Kubernetes Fundamentals"
+      institution = "The Linux Foundation"
+      year = 2017
+
+    [[params.about.education]]
       course = "Machine Learning"
       institution = "Standford - Coursera MOOC, TDEMGCBZU5U8"
       year = 2016
