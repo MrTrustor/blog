@@ -6,6 +6,11 @@ image = "gitlab-on-k8s/gitlab-kubernetes.png"
 tags = ["aws","k8s","kubernetes", "high-avaibility", "gitlab"]
 +++
 
+*Update March 2017:* EFS now supports a [single mount point](http://docs.aws.amazon.com/efs/latest/ug/wt1-test.html#wt1-connect-test-gather-info)
+for a volume, so the setup is now much easier because you don't have to
+differentiate between AZs. Take that into account while following this blog
+post.
+
 ## Introduction
 
 In the last [post](/post/k8s-aws-kops/) we saw how to create a production-ready
@@ -48,8 +53,9 @@ services:
 * AWS RDS (Relational Database Service) will provide a HA PostgreSQL database,
 * AWS EFS (Elastic Filesystem) will provide a HA filesystem available over NFS.
 
-This seems straightforward, but the EFS implementation has a gotcha: you have
-a different mount point in each AZ.
+This seems straightforward, but the EFS implementation has a gotcha: ~~you have
+a different mount point in each AZ~~ (this is not the case anymore, so you don't
+have to replicate the configuration for each AZ).
 
 The Redis server and Gitlab itself will run as K8s deployments.
 
