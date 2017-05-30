@@ -1,6 +1,6 @@
 baseurl = "https://blog.mrtrustor.net/"
 title = "MrTrustor's shiny blog"
-copyright = "&copy; 2016 Théo Chamley"
+copyright = "&copy; 2016-2017 Théo Chamley"
 languageCode = "en-us"
 theme = "academic"
 
