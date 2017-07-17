@@ -20,7 +20,3 @@ Today, my job is to help you make the best software possible at every level:
  - by ensuring that this software is production-ready (tests, 12-factor apps, etc.),
  - by running this software on highly efficient and resilient infrastructures (GCP, AWS, Kubernetes, Swarm and OpenShift are my friends),
  - by making your life easier and letting you concentrate on what you do well: coding great apps!
-
-# Business
-
-Do not hesitate to [contact](#contact) me via e-mail or Twitter for business opportunities. Depending on your needs, I can accept the mission myself or redirect you to my employer ([Oxalide](http://www.oxalide.com)). In the second case, I will most likely work on your project.
