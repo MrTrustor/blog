@@ -1,4 +1,4 @@
-HUGO_VER = 0.16
+HUGO_VER = 0.26
 
 all: build upload
 
@@ -14,7 +14,7 @@ build-drafts:
 	@cd blog && \
          docker run --name hugo --rm --user $(shell id -u) \
                     -v $(shell pwd)/blog:/var/tmp/site -p 1313:1313 \
-		    mrtrustor/hugo:$(HUGO_VER) --buildDrafts --baseURL="https://blog-drafts.mrtrustor.net"
+		    mrtrustor/hugo:$(HUGO_VER) --buildDrafts --baseURL="https://blog-drafts.mrtrustor.net/"
 
 upload:
 	s3deploy -bucket blog.mrtrustor.net -region eu-west-1 -source blog/public/
@@ -28,7 +28,7 @@ clean:
 	@rm -r blog/public
 
 clean-drafts:
-	aws s3 rm --region eu-west-1 s3://blog-drafts.mrtrustor.net/ --recursive 
+	aws s3 rm --region eu-west-1 s3://blog-drafts.mrtrustor.net/ --recursive
 
 post:
 	@cd blog && \
@@ -36,3 +36,9 @@ post:
 		-v $(shell pwd)/blog:/var/tmp/site -p 1313:1313 \
 		mrtrustor/hugo:$(HUGO_VER) \
 		new post/$(POST_NAME).md
+
+server:
+	@cd blog && \
+	docker run --name hugo --rm --user $(shell id -u) \
+                    -v $(shell pwd)/blog:/var/tmp/site -p 1313:1313 \
+		    mrtrustor/hugo:$(HUGO_VER) --buildDrafts --baseURL="http://127.0.0.1:1313" --bind 0.0.0.0 server

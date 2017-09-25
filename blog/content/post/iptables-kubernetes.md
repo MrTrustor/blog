@@ -2,8 +2,9 @@
 date = "2017-05-29"
 draft = false
 title = "How to use Kubernetes to fix GKE"
-image = "iptables-kubernetes/header.png"
 tags = ["kubernetes","iptables","gke","gcp","vpn"]
+[header]
+image = "iptables-kubernetes/header.png"
 +++
 
 I recently ran into a problem while using Google Container Engine (GKE), the

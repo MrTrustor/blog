@@ -4,7 +4,6 @@ draft = false
 math = false
 tags = ["docker", "mac", "os x"]
 title = "Cleaning up Docker For Mac"
-
 +++
 
 Docker For Mac has really changed how I work: I now use it for all my linux-related developments. The integration is OS X is really well done and it's really perfect for a development environment.

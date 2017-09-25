@@ -1,9 +1,10 @@
 +++
 date = "2016-08-04"
-draft = false 
+draft = false
 title = "Rancher Hands-On - part 1"
-image = "rancher-handson-part1/header.png"
 tags = ["docker","rancher","meetup"]
+[header]
+image = "rancher-handson-part1/header.png"
 +++
 
 Two weeks ago, I gave a presentation at the 42<sup>nd</sup> Docker Paris Meetup about Rancher. Rancher is a Docker orchestrator and, as such, a competitor of Docker Swarm and Kubernetes. However, it has some other features that make it very interesting and not incompatible with Swarm or Kubernetes.

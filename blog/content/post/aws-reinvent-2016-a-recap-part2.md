@@ -2,8 +2,9 @@
 date = "2017-01-02"
 draft = false
 title = "AWS re:Invent 2016 - A recap (part II)"
-image = "aws-reinvent-2016-a-recap-part1/header.png"
 tags = ["aws","reinvent"]
+[header]
+image = "aws-reinvent-2016-a-recap-part1/header.png"
 +++
 
 This is the second and last part of my AWS re:Invent recap. Go check out the

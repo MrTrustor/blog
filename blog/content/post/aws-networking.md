@@ -2,8 +2,9 @@
 date = "2016-07-10"
 draft = false
 title = "AWS Networking"
-image = "aws-networking/aws-network-banner.png"
 tags = ["aws","network","security","architecture"]
+[header]
+image = "aws-networking/aws-network-banner.png"
 +++
 
 ## Classic network topology

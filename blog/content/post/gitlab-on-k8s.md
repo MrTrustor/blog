@@ -2,8 +2,9 @@
 date = "2016-11-04"
 draft = false
 title = "Gitlab on Kubernetes + AWS"
-image = "gitlab-on-k8s/gitlab-kubernetes.png"
 tags = ["aws","k8s","kubernetes", "high-avaibility", "gitlab"]
+[header]
+image = "gitlab-on-k8s/gitlab-kubernetes.png"
 +++
 
 *Update March 2017:* EFS now supports a [single mount point](http://docs.aws.amazon.com/efs/latest/ug/wt1-test.html#wt1-connect-test-gather-info)

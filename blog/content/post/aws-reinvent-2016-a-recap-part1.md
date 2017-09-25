@@ -2,8 +2,9 @@
 date = "2016-12-17"
 draft = false
 title = "AWS re:Invent 2016 - A recap (part I)"
-image = "aws-reinvent-2016-a-recap-part1/header.png"
 tags = ["aws","reinvent"]
+[header]
+image = "aws-reinvent-2016-a-recap-part1/header.png"
 +++
 
 Two weeks ago, thanks to my company, [Oxalide](http://www.oxalide.com), I had the chance to attend AWS re:Invent, in Las Vegas. This is the first part of a recap of all the [announcements](https://aws.amazon.com/new/reinvent/?nc1=h_ls) (yes, there are so many things to talk about that it doesn't fit in a single post). You will also find a small opinionated analysis of the impact of each product, based on the current market and ecosystem.

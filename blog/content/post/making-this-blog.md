@@ -2,8 +2,9 @@
 date = "2016-07-06T20:23:24Z"
 draft = false
 title = "Making this blog"
-image = "making-this-blog/hugo-logo.png"
 tags = ["docker","aws","s3","serverless","hugo"]
+[header]
+image = "making-this-blog/hugo-logo.png"
 +++
 
 # How is this blog made?

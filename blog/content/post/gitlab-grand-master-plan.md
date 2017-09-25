@@ -1,11 +1,11 @@
 +++
 date = "2016-09-14T15:25:14Z"
 draft = false
-image = "gitlab-grand-master-plan/header.png"
 math = false
 tags = ["gitlab", "git", "agile", "conversational development"]
 title = "Gitlab Grand Master Plan"
-
+[header]
+image = "gitlab-grand-master-plan/header.png"
 +++
 
 On september, the 13th, at 7p.m (CEST), Gitlab presented its "[Grand Master Plan](https://about.gitlab.com/2016/09/14/gitlab-live-event-recap/)": the direction that the company and its product will take in the coming months.

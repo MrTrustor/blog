@@ -2,8 +2,9 @@
 date = "2016-08-23"
 draft = false
 title = "Rancher Hands-On - part 2"
-image = "rancher-handson-part2/header.jpg"
 tags = ["docker","rancher","meetup","kubernetes"]
+[header]
+image = "rancher-handson-part2/header.jpg"
 +++
 
 Here is the second part of the presentation I gave at the 42<sup>nd</sup> Docker Paris Meetup about Rancher. To see the first video, [click here](/post/rancher-handson-part1/).

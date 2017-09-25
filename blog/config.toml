@@ -10,13 +10,14 @@ theme = "academic"
 # Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = "UA-80301889-1"
 
-
 [params]
   name = "Théo Chamley"
-  role = "Cloud Architect & DevOps engineer"
-  organization = "Freelance & Oxalide"
+  role = "Solutions Architect"
+  organization = "Google"
+  gravatar = false
   avatar = "moi.jpg"
   email = "theo.ch+blog@mley.fr"
+  keybase = "mrtrustor"
   pgp = """
 ```nohightlight
 -----BEGIN PGP PUBLIC KEY BLOCK-----
@@ -93,7 +94,7 @@ xiq0GYIOGiR+
   sharing = true
 
   # Link custom CSS and JS assets (relative to /static/css and /static/js respectively)
-  custom_css = []
+  custom_css = ["custom.css"]
   custom_js  = []
 
   # Biography section.
@@ -102,36 +103,6 @@ xiq0GYIOGiR+
     interests = ["Automation", "Software & infra architecture", "Artificial Intelligence"]
     str_interests = "Interests"
     str_education = "Diplomas"
-
-    [[params.about.education]]
-      course = "LFS258 - Kubernetes Fundamentals"
-      institution = "The Linux Foundation"
-      year = 2017
-
-    [[params.about.education]]
-      course = "Machine Learning"
-      institution = "Standford - Coursera MOOC, TDEMGCBZU5U8"
-      year = 2016
-
-    [[params.about.education]]
-      course = "Certified Cloud Architect"
-      institution = "Google, Cert. ID: 3jgAQY"
-      year = 2017
-
-    [[params.about.education]]
-      course = "Solutions Architect – Professional"
-      institution = "Amazon Web Services, AWS-PSA-1551"
-      year = 2015
-
-    [[params.about.education]]
-      course = "Civilingenjör (M Sc./Eng.)"
-      institution = "Kungliga Tekniska Högskolan (Stockholm, Sweden)"
-      year = 2012
-
-    [[params.about.education]]
-      course = "Ingénieur (M Sc./Eng.)"
-      institution = "Ecole Centrale de Lyon (Lyon, France)"
-      year = 2011
 
   # Selected Publications section.
   # Section will only be displayed if there are publications with `selected = true` in their `+++` preamble.
@@ -215,11 +186,6 @@ xiq0GYIOGiR+
   name = "Posts"
   url = "#posts"
   weight = 2
-
-#[[menu.main]]
-#  name = "Projects"
-#  url = "#projects"
-#  weight = 3
 
 [[menu.main]]
   name = "Contact"

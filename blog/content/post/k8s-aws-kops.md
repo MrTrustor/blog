@@ -2,8 +2,9 @@
 date = "2016-10-23"
 draft = false
 title = "Kubernetes on AWS - Kops"
-image = "k8s-aws-kops/aws-network-banner.png"
 tags = ["aws","k8s","kubernetes", "high-avaibility", "kops"]
+[header]
+image = "k8s-aws-kops/aws-network-banner.png"
 +++
 
 ## Introduction
