@@ -7,6 +7,10 @@ tags = ["kubernetes","iptables","gke","gcp","vpn"]
 image = "iptables-kubernetes/header.png"
 +++
 
+*Note: Since writing this post, I joined Google. We have released a feature
+called [IP Aliases](https://cloud.google.com/kubernetes-engine/docs/how-to/ip-aliases)
+that addresses the problem described in this article, and much more.*
+
 I recently ran into a problem while using Google Container Engine (GKE), the
 managed Kubernetes by Google. This lead me to an interesting solution that
 can be used for a large range of issues you could encounter in Kubernetes.
