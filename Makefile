@@ -4,6 +4,8 @@ all: build upload
 
 all-drafts: build-drafts upload-drafts
 
+all-gcs: build upload-gcs
+
 build:
 	@cd blog && \
          docker run --name hugo --rm --user $(shell id -u) \
@@ -22,6 +24,10 @@ upload:
 
 upload-drafts:
 	s3deploy -bucket blog-drafts.mrtrustor.net -region eu-west-1 -source blog/public/
+	$(MAKE) clean
+
+upload-gcs:
+	gsutil -m rsync -d -r -a public-read -x ".DS_Store" blog/public/ gs://blog.mrtrustor.net/
 	$(MAKE) clean
 
 clean:
