@@ -6,6 +6,8 @@ all-drafts: build-drafts upload-drafts
 
 all-gcs: build upload-gcs
 
+all-drafts-gcs: build-drafts upload-drafts-gcs
+
 build:
 	@cd blog && \
          docker run --name hugo --rm --user $(shell id -u) \
@@ -28,6 +30,10 @@ upload-drafts:
 
 upload-gcs:
 	gsutil -m rsync -d -r -a public-read -x ".DS_Store" blog/public/ gs://blog.mrtrustor.net/
+	$(MAKE) clean
+
+upload-drafts-gcs:
+	gsutil -m rsync -d -r -a public-read -x ".DS_Store" blog/public/ gs://blog-drafts.mrtrustor.net/
 	$(MAKE) clean
 
 clean:
