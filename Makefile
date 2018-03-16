@@ -42,6 +42,9 @@ clean:
 clean-drafts:
 	aws s3 rm --region eu-west-1 s3://blog-drafts.mrtrustor.net/ --recursive
 
+clean-drafts-gcs:
+	gsutil -m rm -r gs://blog-drafts.mrtrustor.net/*
+
 post:
 	@cd blog && \
 	docker run --name hugo --rm --user $(shell id -u) \
