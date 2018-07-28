@@ -1,0 +1,5 @@
+steps:
+- name: 'mrtrustor/hugo:0.26'
+  dir: 'blog'
+- name: 'gcr.io/cloud-builders/gsutil'
+  args: ['-m', 'rsync', '-d', '-r', '-a', 'public-read', '-x', 'blog/public/robots.txt', 'blog/public/', 'gs://blog.mrtrustor.net/']
