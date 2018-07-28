@@ -24,19 +24,15 @@ build-drafts:
 
 upload:
 	s3deploy -bucket blog.mrtrustor.net -region eu-west-1 -source blog/public/
-	$(MAKE) clean
 
 upload-drafts:
 	s3deploy -bucket blog-drafts.mrtrustor.net -region eu-west-1 -source blog/public/
-	$(MAKE) clean
 
 upload-gcs:
-	gsutil -m rsync -d -r -a public-read -x ".DS_Store" blog/public/ gs://blog.mrtrustor.net/
-	$(MAKE) clean
+	gsutil -m rsync -d -r -a public-read -x ".DS_Store" -x "robots.txt" blog/public/ gs://blog.mrtrustor.net/
 
 upload-drafts-gcs:
 	gsutil -m rsync -d -r -a public-read -x ".DS_Store" blog/public/ gs://blog-drafts.mrtrustor.net/
-	$(MAKE) clean
 
 clean:
 	@rm -r blog/public
