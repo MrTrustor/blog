@@ -29,6 +29,11 @@ weight = 1
   year = 2017
 
 [[education.courses]]
+  course = "Certified Cloud Engineer"
+  institution = "Google, Cert. ID: 1MrnTV"
+  year = 2018
+
+[[education.courses]]
   course = "Solutions Architect – Professional"
   institution = "Amazon Web Services, AWS-PSA-1551"
   year = 2015
@@ -60,4 +65,4 @@ Today, my job is to help you make the best software possible at every level:
  - by running this software on highly efficient and resilient infrastructures,
  - by making your life easier and letting you concentrate on what you do well: coding great apps!
 
-**Disclaimer:** This is my _personal blog_, the opinions expressed here represent my own and not those of my employer. 
+**Disclaimer:** This is my _personal blog_, the opinions expressed here represent my own and not those of my employer.
