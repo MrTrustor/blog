@@ -10,6 +10,10 @@ theme = "academic"
 # Enable analytics by entering your Google Analytics tracking ID
 googleAnalytics = "UA-80301889-1"
 
+[outputs]
+  home = [ "HTML", "CSS", "RSS" ]
+  section = [ "HTML", "RSS" ]
+
 [params]
   name = "Théo Chamley"
   role = "Solutions Architect"
@@ -35,6 +39,14 @@ googleAnalytics = "UA-80301889-1"
   custom_css = ["custom.css"]
   custom_js  = []
 
+  # Color theme.
+  #   Choose from `default`, `ocean`, `forest`, `coffee`, `dark`, or `1950s`.
+  color_theme = "default"
+
+  # Font style.
+  #   Choose from `default`, `classic`, or `playfair`.
+  font = "default"
+
   # Biography section.
   # Section will only be displayed if `content/home/about.md` exists.
   [params.about]
@@ -52,7 +64,7 @@ googleAnalytics = "UA-80301889-1"
   # Publications section.
   # Section will only be displayed if there are publications in `content/publication/`.
   [params.publications]
-    count = 10
+    count = 5
     detailed_list = false
     title = "Recent Publications"
     subtitle = ""
@@ -118,6 +130,12 @@ googleAnalytics = "UA-80301889-1"
 [[menu.main]]
   name = "Home"
   url = "#top"
+  weight = 1
+
+
+[[menu.main]]
+  name = "Publications"
+  url = "#publications"
   weight = 1
 
 [[menu.main]]

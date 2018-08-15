@@ -1,2 +1,4 @@
 - id: education
   translation: Diplomas
+- id: abstract
+  translation: Summary

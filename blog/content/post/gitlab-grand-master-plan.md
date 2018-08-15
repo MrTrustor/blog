@@ -2,7 +2,7 @@
 date = "2016-09-14T15:25:14Z"
 draft = false
 math = false
-tags = ["gitlab", "git", "agile", "conversational development"]
+tags = ["gitlab", "git", "agile", "conversational-development"]
 title = "Gitlab Grand Master Plan"
 [header]
 image = "gitlab-grand-master-plan/header.png"

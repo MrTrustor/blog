@@ -1,7 +1,7 @@
 steps:
 - name: 'gcr.io/cloud-builders/git'
   args: ['submodule', 'update', '--init', '--recursive']
-- name: 'mrtrustor/hugo:0.26'
+- name: 'mrtrustor/hugo:0.46'
   args: ['--buildDrafts', '--baseURL=https://blog-drafts.mrtrustor.net/']
   dir: 'blog'
 - name: 'gcr.io/cloud-builders/gsutil'
