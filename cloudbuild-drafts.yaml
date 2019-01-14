@@ -1,8 +1,11 @@
 steps:
-- name: 'gcr.io/cloud-builders/git'
+- id: 'Download academic theme'
+  name: 'gcr.io/cloud-builders/git'
   args: ['submodule', 'update', '--init', '--recursive']
-- name: 'mrtrustor/hugo:0.46'
+- id: 'Run Hugo'
+  name: 'mrtrustor/hugo:0.46'
   args: ['--buildDrafts', '--baseURL=https://blog-drafts.mrtrustor.net/']
   dir: 'blog'
-- name: 'gcr.io/cloud-builders/gsutil'
+- id: 'Publish to Cloud Storage'
+  name: 'gcr.io/cloud-builders/gsutil'
   args: ['-m', 'rsync', '-d', '-r', '-a', 'public-read', 'blog/public/', 'gs://blog-drafts.mrtrustor.net/']
