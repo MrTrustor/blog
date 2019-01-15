@@ -1,0 +1,63 @@
+==================================================================
+https://keybase.io/mrtrustor
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://blog.mrtrustor.net
+  * I am mrtrustor (https://keybase.io/mrtrustor) on keybase.
+  * I have a public key with fingerprint EBF1 737F 11E8 5E6D 81CC  631E 235F 766B 0321 525F
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0111c282c577952972ca064a7b88d787b56a0e27d44954b81ea097978f6df80144ed0a",
+      "fingerprint": "ebf1737f11e85e6d81cc631e235f766b0321525f",
+      "host": "keybase.io",
+      "key_id": "235f766b0321525f",
+      "kid": "0111c282c577952972ca064a7b88d787b56a0e27d44954b81ea097978f6df80144ed0a",
+      "uid": "753db19ade55c6ffc30645640d91d019",
+      "username": "mrtrustor"
+    },
+    "service": {
+      "hostname": "blog.mrtrustor.net",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1547584926,
+  "expire_in": 157680000,
+  "prev": "4d4cb81bd24bc508f7e64cc6f731a10eb1310c3de5ff4dae0f4e33694ce37518",
+  "seqno": 19,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Comment: GPGTools - http://gpgtools.org
+
+owGtkr9rFEEUxzdexBgQvMYugYyFgsdlZnd+7RWCgtiJxEIk6roz8+ay3N3uurt3
+8QhBtBBJYzq7NKn8A1IqdhaKIgpiCjvBX42IWNg4eyRWlk4zzJvv9zPvvXmbRxre
+TPN4NOo1FpaiqeeflXf19LntNaQyM0adNdSDyQZ9A2UV9RKDOggTQrQvfc2ECJkf
+Cl/HmNNYKCmNkEIxHmPwhaE0ZFRJAjEORSik5cZKTCgFg2PUQjZJu1DkRZJWDgvK
+EhEISwhIBtxIojUPCPgBs4JzhQOfMJ9ZZ1zJytrhklNxCe0kczF3iCbp/UP/n/Me
+TnCCBUaRMDbAmObW6sDBGKfYhMRgEtbCEoo0HoBTD4qqGJZVVqD1FnLhUaKh7mxd
+yp5E9bNu+6+unULlEHmRVZnO+u5+paryslP7q3FeG1ZBRXuoSCWpce10jhEUZZKl
+qEOcUldJzSaMCiZp6PMWglt5UkCU1AomuMRu1e/AyCFvUEO1K10ZnyrNsLQCOHUf
+YUVAYoJBkYBgHbiiraUmBmwpBAEPqYZAMCJRXd3NNHPw0CUadx20TLppXA0LQOuz
+94fTXnPGmzu2MP31e3m7+en64M4LPb8/ggcP1PPnzR4+uh/Z2fF+H3r6euvxk43l
+xsUT559d2d149W57980PvPjtUfZyzFd/TXkf8uWT15bOtL4svlVNzS793NQPP76/
+PHf3gb914d7ZU38A
+=bLWs
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/mrtrustor
+
+==================================================================
