@@ -1,0 +1,10 @@
+server {
+    listen       ${PORT};
+
+    error_page 404 /404.html;
+
+    location / {
+        root   /usr/share/nginx/html;
+        index  index.html;
+    }
+}

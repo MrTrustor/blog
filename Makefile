@@ -8,7 +8,7 @@ build:
 	@cd blog && \
          docker run --name hugo --rm --user $(shell id -u) \
                     -v $(shell pwd)/blog:/var/tmp/site -p 1313:1313 \
-                    mrtrustor/hugo:$(HUGO_VER)
+                    mrtrustor/hugo:$(HUGO_VER) --baseURL="https://blog-nl3g4apd7q-uc.a.run.app/"
 
 build-drafts:
 	@cd blog && \
