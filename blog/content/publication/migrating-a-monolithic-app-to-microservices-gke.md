@@ -3,7 +3,7 @@ title = "Migrating a monolithic application to microservices on Google Kubernete
 date = 2019-04-02T00:00:00
 draft = false
 
-authors = ["Théo Chamley"]
+authors = ["Théo Chamley", "Marco Ferrari"]
 
 publication = "Google Cloud website"
 
