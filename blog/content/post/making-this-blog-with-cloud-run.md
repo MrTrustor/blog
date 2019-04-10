@@ -1,6 +1,6 @@
 +++
 date = "2019-04-12"
-draft = false
+draft = true
 title = "Making this blog with Cloud Run"
 tags = ["knative","cloud-run","serverless","docker","hugo"]
 [header]
@@ -8,6 +8,7 @@ image = "making-this-blog-with-cloud-run/header.png"
 +++
 
 ## Until now
+
 In my first [post](/post/making-this-blog/) on this blog explained how I created
 this blog. At the time, I was using:
 * [Hugo](https://gohugo.io/) as a static site
@@ -25,6 +26,7 @@ didn't seem very "corporate" :-) So, I updated my setup like this:
   triggers a build of the website, which is then automatically published on GCS.
 
 ## The future
+
 But it's now time for a new update! This blog is now hosted on [Cloud Run](https://cloud.google.com/run/docs/).
 Cloud Run is a new serverless hosting service from Google Cloud Platform (GCP).
 It's basically a hosted version of [Knative](https://cloud.google.com/knative/),
