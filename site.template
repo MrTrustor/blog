@@ -3,8 +3,8 @@ server {
 
     error_page 404 /404.html;
 
-    if ($http_x_forwarded_proto = "http") {
-        return 301 https://$server_name$request_uri;
+    if ( $http_x_forwarded_proto = "http" ) {
+       return 301 https://$server_name$request_uri;
     }
 
     location / {
