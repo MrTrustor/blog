@@ -1,7 +1,0 @@
-{{ $environment := (getenv "LOCAL") }}
-{{ if not (eq $environment "true") }}
-<script src="/js/custom.js"></script>
-<script type="text/javascript">
-  redirectPageIfNeeded("{{ .Site.BaseURL }}");
-</script>
-{{ end }}
