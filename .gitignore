@@ -1,4 +1,5 @@
 blog/public/*
 !blog/public/robots.txt
+!blog/public/robots-prod.txt
 !blog/public/keybase.txt
 .DS_Store

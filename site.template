@@ -11,4 +11,8 @@ server {
         root   /usr/share/nginx/html;
         index  index.html;
     }
+
+    location /robots.txt {
+        alias /usr/share/nginx/html/${ROBOTS_FILE};
+    }
 }
