@@ -9,7 +9,7 @@ image = "making-this-blog-with-cloud-run/header.png"
 
 ## Until now
 
-In my first [post](/post/making-this-blog/) on this blog explained how I created
+In my first [post](/post/making-this-blog/) on this blog, I explained how I created
 this blog. At the time, I was using:
 
 * [Hugo](https://gohugo.io/) as a static site
