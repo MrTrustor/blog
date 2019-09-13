@@ -7,7 +7,7 @@ tags = ["gcp", "billing"]
 
 If you are using GCP, you may at one point need to change the billing account
 associated with all your projects. This "billing account migration" can happen
-for a number of reason, but a common one would that you are consolidating
+for a number of reasons, but a common one is the consolidation of
 several existing billing accounts under a new one.
 
 Below, you'll find a small script to allow you to do that quickly. This script takes all
