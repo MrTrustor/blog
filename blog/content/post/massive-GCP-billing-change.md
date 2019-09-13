@@ -19,6 +19,7 @@ migration as additional arguments.
 To be able to execute this script you must have the following permissions/roles:
 
 * "Billing Account User" (`roles/billing.user`) on the new billing account,
+* "Billing Account Viewer" (`roles/billing.viewer`) on the old billing account,
 * "Project Billing Manager" (`roles/billing.projectManager`) on the projects
   that are impacted.
 
