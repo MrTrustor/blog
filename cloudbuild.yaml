@@ -14,6 +14,6 @@ steps:
   args: ["push", "gcr.io/${PROJECT_ID}/blog:${SHORT_SHA}"]
 - id: 'Deploy to Cloud Run'
   name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'blog', '--set-env-vars=HOST=blog.mrtrustor.net,ROBOTS_FILE=robots-prod.txt', '--image', 'gcr.io/${PROJECT_ID}/blog:${SHORT_SHA}', '--allow-unauthenticated', '--region', 'us-central1']
+  args: ['beta', 'run', 'deploy', 'blog', '--set-env-vars=HOST=blog.mrtrustor.net,ROBOTS_FILE=robots-prod.txt', '--image', 'gcr.io/${PROJECT_ID}/blog:${SHORT_SHA}', '--allow-unauthenticated', '--region', 'us-central1', '--platform=managed']
 images:
 - "gcr.io/${PROJECT_ID}/blog:${SHORT_SHA}"
