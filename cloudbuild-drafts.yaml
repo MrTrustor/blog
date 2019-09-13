@@ -4,7 +4,7 @@ steps:
   args: ['submodule', 'update', '--init', '--recursive']
 - id: 'Run Hugo'
   name: 'mrtrustor/hugo:0.46'
-  args: ['--buildDrafts', '--baseURL=https://blog-drafts.mrtrustor.net']
+  args: ['--buildDrafts', '--baseURL=https://blog.mrtrustor.dev']
   dir: 'blog'
 - id: 'Build Image'
   name: 'gcr.io/cloud-builders/docker'
@@ -14,6 +14,6 @@ steps:
   args: ["push", "gcr.io/${PROJECT_ID}/blog:${SHORT_SHA}-drafts"]
 - id: 'Deploy to Cloud Run'
   name: 'gcr.io/cloud-builders/gcloud'
-  args: ['beta', 'run', 'deploy', 'blog-drafts', '--set-env-vars=HOST=blog-drafts.mrtrustor.net,ROBOTS_FILE=robots.txt', '--image', 'gcr.io/${PROJECT_ID}/blog:${SHORT_SHA}-drafts', '--allow-unauthenticated', '--region', 'us-central1']
+  args: ['beta', 'run', 'deploy', 'blog-drafts', '--set-env-vars=HOST=blog.mrtrustor.dev,ROBOTS_FILE=robots.txt', '--image', 'gcr.io/${PROJECT_ID}/blog:${SHORT_SHA}-drafts', '--allow-unauthenticated', '--region', 'us-central1', '--platform=managed']
 images:
 - "gcr.io/${PROJECT_ID}/blog:${SHORT_SHA}-drafts"
