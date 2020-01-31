@@ -29,6 +29,11 @@ weight = 1
   year = 2017
 
 [[education.courses]]
+  course = "Professional Cloud DevOps Engineer"
+  institution = "Google, Cert. ID: dC2PPe"
+  year = 2020
+
+[[education.courses]]
   course = "Certified Cloud Engineer"
   institution = "Google, Cert. ID: 1MrnTV"
   year = 2018
