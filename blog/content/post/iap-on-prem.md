@@ -32,7 +32,7 @@ The problem with that architecture is that it's really not optimized: you need t
 (or even a managed instance group, or a Kubernetes cluster, if you want HA), and optionnally a VPN.
 
 Fortunately, Google Cloud recently released a feature that went a bit under the radar:
-[https://cloud.google.com/load-balancing/docs/negs/internet-neg-concepts](Internet network endpoint groups) (Internet NEGs).
+[Internet network endpoint groups](https://cloud.google.com/load-balancing/docs/negs/internet-neg-concepts) (Internet NEGs).
 This allows Google Load Balancers to have backends outside of Google Cloud! And, best of all, that backend can
 be a hostname, not only a static IP! That is really convenient for me, since my ISP doesn't attribute static IPs.
 You can now simplify greatly the setup:
@@ -40,6 +40,7 @@ You can now simplify greatly the setup:
 ![iap-neg](/img/iap-on-prem/iap-neg.png)
 
 Here is how I did it, details will vary for you, of course.
+
 1. Configure your router to forward incomming traffic on your application's port to the application.
   * If you can, restrict that forwarding to `34.96.0.0/20` and `34.127.192.0/18` ([source](https://cloud.google.com/load-balancing/docs/https/troubleshooting-ext-https-lbs#traffic_does_not_reach_the_endpoints)).
   * If that's not possible on your router, then setup a firewall rule to restrict incomming traffic to those ranges.
@@ -58,6 +59,6 @@ Here is how I did it, details will vary for you, of course.
 After a few minutes, the load balancer will have initialized, and you should be able to access your application
 through `myapp.example.com`, without any authentication nor authorization. You can now enable IAP following
 the [documentation](https://cloud.google.com/iap/docs/enabling-compute-howto) on your new load balancer.
-Grant the "IAP-Secured Web App User" IAM role to anyone who needs to access the application.
+Grant the _IAP-Secured Web App User_ IAM role to anyone who needs to access the application.
 
 Here you go! An On-Prem application, protected Google-style with Identity-Aware Proxy!
