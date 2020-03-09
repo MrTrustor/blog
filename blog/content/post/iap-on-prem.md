@@ -39,6 +39,9 @@ You can now simplify greatly the setup:
 
 ![iap-neg](/img/iap-on-prem/iap-neg.png)
 
+_Note: If you want the traffic between the load balancer and your application to be encrypted, then
+your application has to listen on HTTPS, and you need to use that as a backend for the load balancer._
+
 Here is how I did it, details will vary for you, of course.
 
 1. Configure your router to forward incomming traffic on your application's port to the application.
