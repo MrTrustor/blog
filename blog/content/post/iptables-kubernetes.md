@@ -7,9 +7,13 @@ tags = ["kubernetes","iptables","gke","gcp","vpn"]
 image = "iptables-kubernetes/header.png"
 +++
 
-*Note: Since writing this post, I joined Google. We have released a feature
+**Note: Since writing this post, I joined Google. We have released a feature
 called [IP Aliases](https://cloud.google.com/kubernetes-engine/docs/how-to/ip-aliases)
-that addresses the problem described in this article, and much more.*
+that addresses the problem described in this article, and much more. Activating IP Aliases requires creating a new cluster. If you can't do that, then you can now
+change the configuration of the `ip-masquerade-agent` as described
+[here](https://cloud.google.com/kubernetes-engine/docs/how-to/ip-masquerade-agent#specify-non-masq-cidrs).
+This gives the same end-result as the solution described in this article, but
+is much cleaner.**
 
 I recently ran into a problem while using Google Container Engine (GKE), the
 managed Kubernetes by Google. This lead me to an interesting solution that
