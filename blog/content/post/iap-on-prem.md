@@ -45,7 +45,7 @@ your application has to listen on HTTPS, and you need to use that as a backend f
 Here is how I did it, details will vary for you, of course.
 
 1. Configure your router to forward incomming traffic on your application's port to the application.
-  * If you can, restrict that forwarding to `34.96.0.0/20` and `34.127.192.0/18` ([source](https://cloud.google.com/load-balancing/docs/https/troubleshooting-ext-https-lbs#traffic_does_not_reach_the_endpoints)).
+  * If you can, restrict that forwarding to `34.96.0.0/20` and `34.127.192.0/18` ([source](https://cloud.google.com/load-balancing/docs/https/troubleshooting-ext-https-lbs#traffic_does_not_reach_the_endpoints)). Check the `_cloud-eoips.googleusercontent.com` DNS TXT record for the current list of IP ranges.
   * If that's not possible on your router, then setup a firewall rule to restrict incomming traffic to those ranges.
 2. If your ISP gives you a dynamic IP (like me), then setup some kind of dynamic DNS to get a stable hostname.
 3. Reserve a [static IP address](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-external-ip-address)
