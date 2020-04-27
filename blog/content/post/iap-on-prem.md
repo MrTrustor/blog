@@ -5,6 +5,8 @@ title = "Identity-Aware Proxy for On-Prem applications"
 tags = ["iap"]
 +++
 
+_Edit: Added a note about JWT header validation._
+
 I have a couple internal systems that I run at home, and that I want to be able to access from outside.
 I want only my partner and myself to be able to access those systems, and I want that access to be as
 transparent as possible for her. For that, I decided to use Google's
@@ -47,6 +49,7 @@ Here is how I did it, details will vary for you, of course.
 1. Configure your router to forward incomming traffic on your application's port to the application.
   * If you can, restrict that forwarding to `34.96.0.0/20` and `34.127.192.0/18` ([source](https://cloud.google.com/load-balancing/docs/https/troubleshooting-ext-https-lbs#traffic_does_not_reach_the_endpoints)). Check the `_cloud-eoips.googleusercontent.com` DNS TXT record for the current list of IP ranges.
   * If that's not possible on your router, then setup a firewall rule to restrict incomming traffic to those ranges.
+  * See the [note about JWT header][1] for a better solution to secure your endpoint on-prem.
 2. If your ISP gives you a dynamic IP (like me), then setup some kind of dynamic DNS to get a stable hostname.
 3. Reserve a [static IP address](https://cloud.google.com/compute/docs/ip-addresses/reserve-static-external-ip-address)
    on GCP.
@@ -65,3 +68,10 @@ the [documentation](https://cloud.google.com/iap/docs/enabling-compute-howto) on
 Grant the _IAP-Secured Web App User_ IAM role to anyone who needs to access the application.
 
 Here you go! An On-Prem application, protected Google-style with Identity-Aware Proxy!
+
+---
+
+[1]: While whitelisting IPs is easy to setup, there is no guarantee that they will not change. A better, more
+resilient solution is to validate the `X-Goog-Iap-Jwt-Assertion` header that IAP injects in the request. You can
+use something like [Envoy](https://www.envoyproxy.io/docs/envoy/latest/api-v2/config/filter/http/jwt_authn/v2alpha/config.proto)
+for that. See the [documentation](https://cloud.google.com/iap/docs/signed-headers-howto) for more information.
